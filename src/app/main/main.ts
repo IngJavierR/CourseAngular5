@@ -1,7 +1,14 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'fountain-app',
+  selector: 'main',
   template: require('./main.html')
 })
-export class MainComponent {}
+export class MainComponent {
+
+  constructor(){}
+
+  handlerEventClick(event){
+    console.log(`From Main: ${event}`);    
+  }
+}
