@@ -1,4 +1,40 @@
 <div class="main-container">
     <h1>Main</h1>
-    <person-item [id]="123" (eventClick)="handlerEventClick($event)"></person-item>
+    <person-item [id]="123" #person (eventClick)="handlerEventClick($event)"></person-item>
+    <button style="width:200px;" (click)="person.fromTemplateVariable()">Testing Template Variable</button>
+    <button style="width:200px;" (click)="changeState();">Change State</button>
+    
+    <div *ngIf="showElement">
+        <input value="Prueba"/>
+        <button>ClickMe!</button>
+    </div>
+
+    <div [hidden]="!showElement">
+        <input value="Prueba Hiden"/>
+        <button>ClickMe hidden!</button>
+    </div>
+
+    <div>
+        <div *ngFor="let hero of heroes">
+            <span>{{hero.nombre}} | </span>
+            <span>{{hero.ide}}</span>
+        </div>
+    </div>
+
+    <div [class.green]="isGreen">
+        Esta es una prueba de classes [class.green]
+    </div>
+
+    <div [ngClass]="{green: isGreen, red: !isGreen}">
+        Esta es una prueba de classes [ngClass]
+    </div>
+
+    <div [style.color]="isGreen ? 'red' : 'blue'">
+        Esta es una prueba de classes [style.color]
+    </div>
+
+    <div [ngStyle]="{'color': isGreen ? 'red' : 'blue'}">
+        Esta es una prueba de classes [ngStyle]
+    </div>
+
 </div>

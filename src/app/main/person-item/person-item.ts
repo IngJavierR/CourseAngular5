@@ -7,6 +7,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
         div {
             font-size: 20px;
         }
+        :host {
+            border: 2px solid red;
+        }
     `]
 })
 
@@ -36,5 +39,9 @@ export class PersonItem implements OnInit{
     clickEvent(){
         console.log('Click!');
         this.eventClick.emit('Click!');
+    }
+
+    fromTemplateVariable(){
+        console.log('From template variable');
     }
 }
