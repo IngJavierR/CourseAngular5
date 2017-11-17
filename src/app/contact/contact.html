@@ -1,3 +1,10 @@
 <div class="main-container">
     <h1>Contact</h1>
+    <span>Te atiende: {{agent.name}}</span>
+    <button style="width: 200px;" (click)="getAvailableAgents()">Get available agents</button>
+    <div>
+        <div *ngFor="let agent of availableAgents">
+            <span>Agent: {{agent}}</span>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="main-container">
     <h1>Main</h1>
-    <person-item [id]="123" #person (eventClick)="handlerEventClick($event)"></person-item>
+    <person-item [id]="2 + 2" #person (eventClick)="handlerEventClick($event)"></person-item>
     <button style="width:200px;" (click)="person.fromTemplateVariable()">Testing Template Variable</button>
     <button style="width:200px;" (click)="changeState();">Change State</button>
     

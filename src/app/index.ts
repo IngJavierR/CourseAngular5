@@ -4,6 +4,7 @@ import {routing, RootComponent} from './routes';
 import {NguiMapModule} from '@ngui/map';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { APP_PROVIDERS } from './app.providers';
 import {MatToolbarModule,
         MatSidenavModule,
         MatButtonModule,
@@ -15,6 +16,7 @@ import {MatToolbarModule,
 import {MainComponent} from './main/main';
 import {AboutComponent} from './about/about';
 import {ContactComponent} from './contact/contact';
+import { ReactiveComponent } from "./reactive/reactive";
 import { PersonItem } from './main/person-item/person-item';
 
 export const MATERIAL_COMPONENTS = [
@@ -43,8 +45,10 @@ export const MATERIAL_COMPONENTS = [
     MainComponent,
     AboutComponent,
     ContactComponent,
+    ReactiveComponent,
     PersonItem
   ],
+  providers: APP_PROVIDERS,
   bootstrap: [RootComponent]
 })
 export class AppModule {}

@@ -17,6 +17,7 @@ export class MainComponent implements OnInit{
   showElement: boolean;
   heroes: any = [];
   isGreen: boolean;
+  prueba = 'Mundo';
   constructor(){}
 
   ngOnInit(){

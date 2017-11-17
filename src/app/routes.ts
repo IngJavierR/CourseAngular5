@@ -3,13 +3,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from './main/main';
 import {AboutComponent} from './about/about';
 import {ContactComponent} from './contact/contact';
+import { ReactiveComponent } from "./reactive/reactive";
 import { DataService } from './services/data.service';
-import { APP_PROVIDERS } from './app.providers';
 
 @Component({
   selector: 'fountain-root',
-  template: require('./routes.html'),
-  providers: APP_PROVIDERS
+  template: require('./routes.html')
 })
 export class RootComponent implements OnInit{
 
@@ -38,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'reactive',
+    component: ReactiveComponent
   }
 ];
 
