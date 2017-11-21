@@ -1,3 +1,35 @@
 <div>
     <h1>Reactive</h1>
+    <h3>GigHub User</h3>
+    <span>Nombre: {{person.name | uppercase}}</span>
+    <br/>
+    <span>Apellido: {{person.lastName}}</span>
+    <br/>
+    <span>Id GitHub: {{person.gitHubTag}}</span>
+    <br/>
+    <span>Hora Actual: {{person.currentDate | date:"yyyy/MM/dd"}}</span>
+    <br/>
+    <span>Hora Actual: {{person.currentDate | date:"shortDate"}}</span>
+    <br/>
+    <span>Hora Actual: {{person.currentDate | date:"fullDate" | uppercase}}</span>
+    <br/>
+    <span>Hora Actual: {{person.anualPrice | currency}}</span>
+    <br/>
 </div>
+
+<h2>Gaming Test</h2>
+<button (click)="getMyGames()">Get my games</button>
+<table>
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Console</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games" (click)="pickGame(game)">
+            <td>{{game.name}}</td>
+            <td>{{game.platform}}</td>
+        </tr>
+    </tbody>
+</table>
