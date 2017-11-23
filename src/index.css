@@ -140,3 +140,42 @@ mat-sidenav {
   align-items: center;
   justify-content: center;  
 }
+
+comp-one{
+  flex-grow: 1;
+  border: solid 2px red;
+  margin: 50px;
+  text-align: center;
+}
+
+comp-two{
+  flex-grow: 1;
+  border: solid 2px red;
+  margin: 50px;
+  text-align: center;
+}
+
+comp-three{
+  flex-grow: 1;
+  border: solid 2px red;
+  margin: 50px;
+  text-align: center;
+}
+
+.final-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media all and (max-width: 1200px){
+  .final-container{
+    flex-direction: row;
+  }
+}
+
+@media all and (max-width: 800px){
+  .final-container{
+    flex-direction: column;
+  }
+}

@@ -5,6 +5,7 @@ import {AboutComponent} from './about/about';
 import {ContactComponent} from './contact/contact';
 import { DataService } from './services/data.service';
 import { ReactiveComponent } from "./reactive/reactive";
+import { FinalComponent } from "./final/final";
 
 @Component({
   selector: 'fountain-root',
@@ -41,6 +42,10 @@ export const routes: Routes = [
   {
     path: 'reactive',
     component: ReactiveComponent
+  },
+  {
+    path: 'final',
+    component: FinalComponent
   }
 ];
 

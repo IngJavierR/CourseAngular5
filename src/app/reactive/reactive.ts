@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from "../services/contact.service";
+import { Game } from "../model/games";
 
 @Component({
     selector: 'reactive',
@@ -9,7 +10,7 @@ import { ContactService } from "../services/contact.service";
 export class ReactiveComponent implements OnInit {
     
     person: any = {};
-    games: any = [];
+    games: Game[] = [];
     constructor(private _contactService: ContactService) { }
 
     ngOnInit() {
@@ -30,7 +31,7 @@ export class ReactiveComponent implements OnInit {
             );
     }
 
-    pickGame(game: any){
+    pickGame(game: Game){
         alert(`Game: ${game.name} - 
         Console: ${game.platform}`);
     }

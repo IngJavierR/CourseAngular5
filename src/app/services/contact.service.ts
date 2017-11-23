@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { Game } from "../model/games";
 
 @Injectable()
 export class ContactService {
@@ -34,13 +35,13 @@ export class ContactService {
     private _urlBase: string  = 'http://localhost:8080';
 
     getGames(){
-        return this.sendGet('/games');
+        return this.sendGet<Game[]>('/games');
     }
 
-    sendGet(uri: string){
+    sendGet<T>(uri: string): Observable<T>{
         let url = `${this._urlBase}${uri}`;
         return this._http
-                .get(url, {responseType: 'json'})
+                .get<T>(url, {responseType: 'json'})
                 .catch(this.handlerError);
     }
 
