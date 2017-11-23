@@ -1,3 +1,25 @@
 <div class="main-container">
     <h1>Main</h1>
+    <person-item [valor]="nombre" #person (eventCLick)="handlerEventClick($event)"></person-item>
+    <button (click)="person.emiteAlPadre()" >Testing child!</button>
+    <button (click)="toggleVisibility()">Toogle Visible</button>
+
+    <div [hidden]="!isVisible">
+        <input value="Prueba"/>
+        <button>Click Me!</button>
+    </div>
+
+    <div *ngIf="isVisible">
+        <input value="Prueba NgIF"/>
+        <button>Click Me If!</button>
+    </div>
+
+    <div>
+        <div *ngFor="let hero of heroes">
+            <span>{{hero.name}}</span>
+            <span>{{hero.color}}</span>
+        </div>
+    </div>
+
+
 </div>

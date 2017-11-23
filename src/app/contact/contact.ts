@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../services/contact.service';
+import { log } from 'util';
 
 @Component({
     selector: 'contact',
@@ -6,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContactComponent implements OnInit {
-    constructor() { }
+    
+    constructor(private _contactService: ContactService) { 
+        
+    }
 
-    ngOnInit() { }
+    ngOnInit() {
+        let agents = this._contactService.getSupportAgent();
+        console.log(agents);
+    }
+
+    getAvailableAgents(){
+        this._contactService
+            .getAvailableAgents()
+            .subscribe(
+                value => console.log(value),
+                error => console.log(error),
+                () => console.log('Complete')
+            );
+    }
 }

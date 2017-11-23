@@ -50,7 +50,7 @@ Este proyecto se realizó basado en: [Fountainjs](http://fountainjs.io/)
 
 Javier Rodríguez
 
-[frodriguez@intellego.com.mx]
+[frodriguez@axity.com]
 
 ## License
 
