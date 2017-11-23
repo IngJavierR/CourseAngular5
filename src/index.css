@@ -140,3 +140,42 @@ mat-sidenav {
   align-items: center;
   justify-content: center;  
 }
+
+/* CURSO ANGULAR 5*/
+comp-one{
+  flex-grow: 1;
+  border: solid 2px red;
+  text-align: center;
+  margin: 50px;
+}
+comp-two{
+  flex-grow: 1;
+  border: solid 2px red;
+  text-align: center;
+  margin: 50px;
+}
+comp-three{
+  flex-grow: 1;
+  border: solid 2px red;
+  text-align: center;
+  margin: 50px;
+}
+
+.final-container {
+  display: flex;
+  /*flex-direction: row;*/
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media all and (max-width: 1200px) {
+  .final-container {
+    flex-direction: row;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .final-container {
+    flex-direction: column;
+  }
+}

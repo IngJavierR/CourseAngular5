@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveService } from '../services/reactive.service';
+import { Game } from "../model/games";
 
 @Component({
     selector: 'reactive',
@@ -22,7 +23,7 @@ import { ReactiveService } from '../services/reactive.service';
 export class ReactiveComponent implements OnInit {
 
     person: any = {};
-    games: any = [];
+    games: Game[] = [];
     constructor(private _reactiveService: ReactiveService) { }
 
     ngOnInit() {
@@ -38,11 +39,13 @@ export class ReactiveComponent implements OnInit {
     getMyGames(){
         this._reactiveService
             .getMyGames()
-            .subscribe(resp => this.games = resp,
-                       error => console.log(error));
+            .subscribe(resp => {
+                this.games = resp
+            },
+            error => console.log(error));
     }
 
-    pickGame(game: any){
+    pickGame(game: Game){
         alert(`${game.name} == with console == ${game.platform}`);
     }
 }

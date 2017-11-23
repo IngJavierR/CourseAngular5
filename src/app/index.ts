@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {routing, RootComponent} from './routes';
 import {NguiMapModule} from '@ngui/map';
@@ -18,6 +19,10 @@ import {AboutComponent} from './about/about';
 import {ContactComponent} from './contact/contact';
 import { ReactiveComponent } from "./reactive/reactive";
 import { PersonItem } from './main/person-item/person-item';
+import { FinalComponent } from "./final/final";
+import { OneComponent } from "./final/comp-one/comp-one";
+import { TwoComponent } from "./final/comp-two/comp-two";
+import { ThreeComponent } from "./final/comp-three/comp-three";
 
 export const MATERIAL_COMPONENTS = [
   MatToolbarModule,
@@ -35,7 +40,8 @@ export const MATERIAL_COMPONENTS = [
     HttpClientModule,
     routing,
     BrowserAnimationsModule,
-    MATERIAL_COMPONENTS
+    MATERIAL_COMPONENTS,
+    FormsModule
   ],
   exports: [
     MATERIAL_COMPONENTS
@@ -46,7 +52,11 @@ export const MATERIAL_COMPONENTS = [
     AboutComponent,
     ContactComponent,
     ReactiveComponent,
-    PersonItem
+    PersonItem,
+    FinalComponent,
+    OneComponent,
+    TwoComponent,
+    ThreeComponent
   ],
   providers: APP_PROVIDERS,
   bootstrap: [RootComponent]

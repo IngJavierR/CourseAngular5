@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Game } from "../model/games";
 
 @Injectable()
 export class ReactiveService {
@@ -10,13 +11,13 @@ export class ReactiveService {
 
     getMyGames(){
         let uri = '/games'
-        return this.sendGet(uri);
+        return this.sendGet<Game[]>(uri);
     }
 
-    sendGet(uri: string){
+    sendGet<T>(uri: string) : Observable<T>{
         let url = `${this._baseUrl}${uri}`
         return this._http
-                .get(url, {responseType: 'json'})
+                .get<T>(url, {responseType: 'json'})
                 .retry(2)
                 .catch(this.handleError);
     }
